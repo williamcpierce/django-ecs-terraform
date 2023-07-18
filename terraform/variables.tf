@@ -66,6 +66,10 @@ variable "app_count" {
   description = "Number of Docker containers to run"
   default     = 2
 }
+variable "deployment_minimum_healthy_percent" {
+  description = "Minumum percentage of app_count containers running during deployments"
+  default     = 50
+}
 variable "allowed_hosts" {
   description = "Domain name for allowed hosts"
   default     = "YOUR DOMAIN NAME"
@@ -95,11 +99,11 @@ variable "autoscale_min" {
 }
 variable "autoscale_max" {
   description = "Maximum autoscale (number of EC2)"
-  default     = "10"
+  default     = "4"
 }
 variable "autoscale_desired" {
   description = "Desired autoscale (number of EC2)"
-  default     = "4"
+  default     = "2"
 }
 
 

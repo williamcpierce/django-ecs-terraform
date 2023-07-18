@@ -40,6 +40,7 @@ resource "aws_ecs_service" "production" {
   task_definition                    = aws_ecs_task_definition.app.arn
   iam_role                           = aws_iam_role.ecs-service-role.arn
   desired_count                      = var.app_count
+  deployment_minimum_healthy_percent = var.deployment_minimum_healthy_percent
   depends_on                         = [
     aws_alb_listener.ecs-alb-http-listener,
     aws_alb_listener.ecs-alb-redirect-http-to-https,
