@@ -74,6 +74,9 @@ variable "allowed_hosts" {
   description = "Domain name for allowed hosts"
   default     = "YOUR DOMAIN NAME"
 }
+variable "secret_key" {
+  description = "Secret key for Django"
+}
 
 
 # logs
