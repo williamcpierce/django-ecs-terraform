@@ -40,7 +40,7 @@ resource "aws_alb_listener" "ecs-alb-http-listener" {
   }
 }
 
-# Listener (redirects traffic from the load balancer to the target group)
+# Listener (redirects http traffic to https)
 resource "aws_alb_listener" "ecs-alb-redirect-http-to-https" {
   load_balancer_arn = aws_lb.production.id
   port              = "80"
